@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: grey;
+}
+body nav li a{
+    text-decoration: none;
+    color: white;
+}
+body nav li{
+    list-style: none;
+
+}
