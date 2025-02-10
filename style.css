@@ -1,15 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 body{
     margin: 0;
     padding: 0;
 }
 nav{
-    background-color: grey;
+    background-color: #292c2e;
 }
-body nav li a{
-    text-decoration: none;
-    color: white;
+.logoheader{
+    display: block;
+    text-align: center;
 }
-body nav li{
+.logoheader img{
+    height: 100px;   
+    margin-top: 10px;
+}
+.nav{
+    display: flex;
+}
+.nav li{
+    text-align: center;
     list-style: none;
-
+    margin: auto;
+    padding-bottom: 10px;
+    
 }
+.nav li a{
+    text-decoration: none;
+    color: #AD8347;
+    font-size: 1.1em;
+    font-family: "Nunito", serif;
+    font-weight: bold;
+}
+.nav li a:hover{
+    color: #FECE61;
+}
+
+.destaque{
+    color: #FECE61;
+}
+.lancamento{
+    display: flex;
+    justify-content: center;
+    background-color: #292c2e;
+    margin-top: 20px;
+}
+.lancamento h1{
+    font-family: "Nunito", serif;
+    padding: 50px;
+    
+}
+    
