@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Dalmagos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="Imagens/" type="image/x-icon">
+    <link rel="shortcut icon" href="Imagens/LOGO DAL MAGOS 2023 BRILHOS.png" type="image/x-icon">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -16,7 +19,7 @@
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
             <ul class="nav" id="nav">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Redes Sociais</a></li>
+                <li><a href="#rsocial">Redes Sociais</a></li>
                 <li><a href="#">Grupo</a></li>
                 <li><a href="#">Agenda</a></li>
                 <li><a href="#lancamento">Lançamentos</a></li>
@@ -27,16 +30,41 @@
 
     <section class="sobre">
         <h2>Sobre o Grupo Dalmagos</h2>
-        <p>O Grupo Dalmagos traz a força da música tradicional com uma identidade moderna. Com shows marcantes e presença nas redes sociais, o grupo conecta emoções através da música.</p>
+        <p>O Grupo Dalmagos traz a força da música tradicional com uma identidade moderna. Com shows marcantes e
+            presença nas redes sociais, o grupo conecta emoções através da música.</p>
     </section>
+
+    <section id="rsocial" class="rsocial">
+        <h1 class="rsocialtitulo">Dalmagos nas redes!</h1>
+        <p class="rsocialparagrafo">Confira abaixo todas nossas redes sociais!</p>
+        <div class="rsocial-icon">
+            <a href="https://www.instagram.com/grupodalmagos/" target="_blank">
+                <img src="Imagens/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/grupodalmagos/" target="_blank">
+                <img src="Imagens/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@grupodalmagos2025"target="_blank">
+                <img src="Imagens/tiktok.png" alt="Tiktok">
+            </a>
+            <a href="https://www.youtube.com/@grupodalmagos"target="_blank">
+                <img src="Imagens/youtube.png" alt="Youtube">
+            </a>
+            <a href="https://open.spotify.com/intl-pt/artist/7nAn41dCIzPpKJPQRz2UFX?si=ljimO5ynQduXPL8UoAz_-g"target="_blank">
+                <img src="Imagens/spotify.png" alt="Spotify">
+            </a>
+        </div>
+    </section>
+
 
     <section id="lancamento" class="lancamento">
         <div class="container">
             <h1>Confira nosso último <span class="destaque">lançamento</span></h1>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/E-MPiv5T930?si=RBmdmOzuawW9vv4e" 
-                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SpZ0vsCxCN8?si=3VbbUW1L6F7q1JQg"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -44,22 +72,53 @@
     <section class="spotify">
         <h2>Ouça o Grupo Dalmagos também no Spotify</h2>
         <div class="spotify-player">
-            <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/artist/7nAn41dCIzPpKJPQRz2UFX?utm_source=generator&theme=0" 
-            width="100%" height="152" frameborder="0" allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy"></iframe>
+            <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/artist/7nAn41dCIzPpKJPQRz2UFX?utm_source=generator&theme=0"
+                width="100%" height="152" frameborder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
         </div>
     </section>
-    
+
     <section id="contato" class="contato">
-        <h2>Fale Conosco</h2>
-        <p>Email: contato@dalmagos.com.br</p>
-        <p>Instagram: @grupodalmagos</p>
-        <p>Telefone: (00) 0000-0000</p>
+        <h2 class="contato-titulo">Fale Conosco</h2>
+
+        <form class="formulario-contato" onsubmit="enviarWhats(event)">
+
+            <div class="grupo-form">
+                <input type="text" placeholder="Seu Nome" class="campo-form" id="nome" required>
+            </div>
+
+            <div class="grupo-form">
+                <textarea placeholder="Sua Mensagem" rows="6" class="campo-form" id="mensagem" required></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">
+                Enviar por Whatsapp
+            </button>
+
+        </form>
     </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '555496927231';
+
+            const texto = `Olá! Me chamo ${nome}. ${mensagem}`;
+            const msgformatada = encodeURIComponent(texto);
+            const url = `https://wa.me/${telefone}?text=${msgformatada}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+
 
     <footer>
         <p>&copy; 2025 Grupo Dalmagos. Todos os direitos reservados.</p>
     </footer>
 
+</body>

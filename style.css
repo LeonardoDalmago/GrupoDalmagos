@@ -48,10 +48,15 @@ nav.navbar {
     color: #FECE61;
 }
 
+
+
+
+
+
 .sobre {
     padding: 40px 20px;
     text-align: center;
-    background-color: #1f1f1f;
+    background-color: #292c2e;
 }
 
 .sobre h2 {
@@ -60,12 +65,71 @@ nav.navbar {
     margin-bottom: 10px;
 }
 
-.lancamento {
-    background-color: #292c2e;
-    padding: 40px 20px;
+
+
+
+
+
+
+.rsocial {
     text-align: center;
+     background-color: #1f1f1f;
+    padding: 4rem 2rem;
 }
 
+.rsocialtitulo {
+    color: #FECE61;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.rsocialparagrafo {
+    color: #fff;
+    margin-bottom: 2rem;
+}
+.rsocial-icon {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.rsocial-icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    background: linear-gradient(45deg, #AD8347, #FECE61);
+    border-radius: 12px;
+
+    transition: all 0.5s ease;
+}
+.rsocial-icon img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+.rsocial-icon a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px #AD8347;
+}
+
+
+
+
+
+
+.lancamento {
+    background-color: #292c2e;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+.lancamento .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
 .lancamento h1 {
     margin-bottom: 20px;
 }
@@ -92,12 +156,59 @@ nav.navbar {
 
 .contato {
     background-color: #1f1f1f;
-    padding: 40px 20px;
-    text-align: center;
+    padding: 6rem 2rem;
 }
 
-.contato h2 {
+.contato-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
     color: #FECE61;
+}
+
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+}
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+}
+
+.campo-form:focus {
+    border-color: #AD8347;
+    box-shadow: 0 0 10px #AD8347;
+}
+
+.botao-form {
+    color: var(--claro);
+    background: linear-gradient(45deg, #AD8347, #FECE61);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px #AD8347;
 }
 
 footer {
@@ -143,5 +254,14 @@ footer {
 
     .nav li {
         margin: 10px 0;
+    }
+    .rsocial-icon a {
+        width: 60px;
+        height: 60px;
+    }
+
+    .rsocial-icon img {
+        width: 28px;
+        height: 28px;
     }
 }
