@@ -65,15 +65,65 @@ nav.navbar {
     margin-bottom: 10px;
 }
 
+.grupo {
+    padding: 60px 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
 
+.grupo h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
 
+.container-grupo {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-grupo {
+    background-color: #1c1c1c;
+    padding: 20px;
+    width: 220px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-grupo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.card-grupo img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: filter 0.1s ease;
+    object-fit: contain;
+}
+
+.card-grupo h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.card-grupo p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
 
 
 
 
 .rsocial {
     text-align: center;
-     background-color: #1f1f1f;
+    background-color: #1f1f1f;
     padding: 4rem 2rem;
 }
 
@@ -87,12 +137,14 @@ nav.navbar {
     color: #fff;
     margin-bottom: 2rem;
 }
+
 .rsocial-icon {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
+
 .rsocial-icon a {
     display: flex;
     align-items: center;
@@ -106,11 +158,13 @@ nav.navbar {
 
     transition: all 0.5s ease;
 }
+
 .rsocial-icon img {
     width: 35px;
     height: 35px;
     object-fit: contain;
 }
+
 .rsocial-icon a:hover {
     transform: translateY(-4px);
     box-shadow: 0 5px 15px #AD8347;
@@ -126,10 +180,12 @@ nav.navbar {
     padding: 4rem 1.5rem;
     text-align: center;
 }
+
 .lancamento .container {
     max-width: 900px;
     margin: 0 auto;
 }
+
 .lancamento h1 {
     margin-bottom: 20px;
 }
@@ -175,6 +231,7 @@ nav.navbar {
     border-radius: 16px;
     border: 1px solid var(--vidro);
 }
+
 .grupo-form {
     margin-bottom: 1.5rem;
 }
@@ -255,6 +312,7 @@ footer {
     .nav li {
         margin: 10px 0;
     }
+
     .rsocial-icon a {
         width: 60px;
         height: 60px;
@@ -263,5 +321,27 @@ footer {
     .rsocial-icon img {
         width: 28px;
         height: 28px;
+    }
+
+    .container-grupo {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+        padding: 0 10px;
+    }
+
+    .card-grupo {
+        flex: 0 0 85%;
+        max-width: 85%;
+        scroll-snap-align: center;
+    }
+
+    .card-grupo img {
+        height: 260px;
+    }
+
+    .container-grupo::-webkit-scrollbar {
+        display: none;
     }
 }
