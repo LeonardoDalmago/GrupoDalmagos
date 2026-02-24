@@ -65,13 +65,19 @@ nav.navbar {
     margin-bottom: 10px;
 }
 
+
+
+
+
 .grupo {
     padding: 60px 20px;
     background-color: #111;
     color: #fff;
     text-align: center;
 }
-
+.indicador-scroll {
+    display: none;
+}
 .grupo h2 {
     font-size: 2.2rem;
     margin-bottom: 40px;
@@ -91,6 +97,8 @@ nav.navbar {
     width: 220px;
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .card-grupo:hover {
@@ -117,7 +125,32 @@ nav.navbar {
     font-size: 0.9rem;
     color: #aaa;
 }
+.instagram-icon {
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
 
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+}
+
+.instagram-icon img {
+    width: 70%; height: 70%;
+    object-fit: contain;
+}
+
+
+.instagram-icon:hover {
+    transform: translateX(-50%) scale(1.1);
+    transition: 0.2s ease;
+}
 
 
 
@@ -170,8 +203,16 @@ nav.navbar {
     box-shadow: 0 5px 15px #AD8347;
 }
 
-
-
+.agenda{
+    background-color: #1f1f1f;
+    padding: 4rem 1.5rem;
+    text-align: center; 
+}
+.agendatitulo{
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
 
 
 
@@ -343,5 +384,17 @@ footer {
 
     .container-grupo::-webkit-scrollbar {
         display: none;
+    }
+    .indicador-scroll {
+        display: block;
+        font-size: 2rem;
+        color: #FECE61;
+        margin-bottom: 15px;
+        animation: moverSeta 1.5s infinite;
+    }
+    @keyframes moverSeta {
+        0% { transform: translateX(0); opacity: 0.6; }
+        50% { transform: translateX(8px); opacity: 1; }
+        100% { transform: translateX(0); opacity: 0.6; }
     }
 }
