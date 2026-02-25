@@ -31,7 +31,8 @@
     <section class="sobre" id="sobre">
         <h2>Sobre o Grupo Dalmagos</h2>
         <p>O Grupo Dalmagos traz a força da música tradicional com uma identidade moderna. Com shows marcantes e
-            presença nas redes sociais, o grupo conecta emoções através da música.</p>
+            presença nas redes sociais, o grupo conecta emoções através da música. Grupo Dalmagos A magia do bailão.</p>
+            <p>Grupo Dalmagos A magia do bailão.</p>
     </section>
 
     <section id="rsocial" class="rsocial">
@@ -55,11 +56,6 @@
                 <img src="Imagens/spotify.png" alt="Spotify">
             </a>
         </div>
-    </section>
-
-    <section class="agenda" id="agenda">
-        <h1 class="agendatitulo">Agenda do nosso grupo!</h1>
-        <p>Confira abaixo nossos próximos eventos,</p>
     </section>
 
     <section class="grupo" id="grupo">
@@ -124,7 +120,70 @@
             Passe para o lado ➜
         </div>
     </section>
+    <section class="agenda" id="agenda">
+    <h2 class="agendatitulo">Nossos próximos eventos</h2>
 
+    <div class="agenda-container">
+
+        <div class="evento">
+            <div class="evento-data">
+                <span class="dia">28</span>
+                <span class="mes">MAR</span>
+            </div>
+
+            <div class="evento-info">
+                <h3>São José dos Ricci</h3>
+                <p>Marau - RS</p>
+            </div>
+        </div>
+
+        <div class="evento">
+            <div class="evento-data">
+                <span class="dia">8</span>
+                <span class="mes">ABR</span>
+            </div>
+
+            <div class="evento-info">
+                <h3>Bairro Santa Helena</h3>
+                <p>Marau - RS</p>
+            </div>
+        </div>
+
+        <div class="evento">
+            <div class="evento-data">
+                <span class="dia">14</span>
+                <span class="mes">ABR</span>
+            </div>
+
+            <div class="evento-info">
+                <h3>EVENTO PRIVADO</h3>
+                <p>EVENTO PRIVADO</p>
+            </div>
+        </div>
+        <div class="evento">
+            <div class="evento-data">
+                <span class="dia">21</span>
+                <span class="mes">ABR</span>
+            </div>
+
+            <div class="evento-info">
+                <h3>Bairro São José</h3>
+                <p>Vila Maria - RS</p>
+            </div>
+        </div>
+        <div class="evento">
+            <div class="evento-data">
+                <span class="dia">22</span>
+                <span class="mes">ABR</span>
+            </div>
+
+            <div class="evento-info">
+                <h3>Capela São Pedro Linha Oitava</h3>
+                <p>Nova Bassano - RS</p>
+            </div>
+        </div>
+    </div>
+</section>
     <section id="lancamento" class="lancamento">
         <div class="container">
             <h1>Confira nosso último <span class="destaque">lançamento</span></h1>
@@ -168,6 +227,9 @@
         </form>
     </section>
 
+    <div class="voltar-topo">
+            <a href="#" class="btn-topo">Voltar ao topo</a>
+        </div>
     <script>
         function enviarWhats(event) {
             event.preventDefault();
@@ -182,11 +244,26 @@
 
             window.open(url, '_blank');
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const nav = document.getElementById("nav");
+
+            menuToggle.addEventListener("click", () => {
+                nav.classList.toggle("active");
+            });
+
+            document.querySelectorAll("#nav a").forEach(link => {
+                link.addEventListener("click", () => {
+                    nav.classList.remove("active");
+                });
+            });
+        });
     </script>
 
 
-    <footer>
-        <p>&copy; 2025 Grupo Dalmagos. Todos os direitos reservados.</p>
-    </footer>
-
+        
+        <footer>
+            <p>&copy; 2025 Grupo Dalmagos. Todos os direitos reservados.</p>
+        </footer>
 </body>
