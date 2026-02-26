@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+:root {
+    --vidro: rgba(255, 255, 255, 0.1);
+    --claro: #fff;
+}
+
 html {
     scroll-behavior: smooth;
 }
+
+
 
 body {
     margin: 0;
@@ -12,17 +19,44 @@ body {
     color: #fff;
 }
 
+
+
+section {
+    padding: 100px 20px;
+    position: relative;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 206, 97, 0.3), transparent);
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 nav.navbar {
-    background-color: #292c2e;
+    background: linear-gradient(90deg, #574413 0%, #000000 80%);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+    justify-content: center;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .logoheader img {
     height: 80px;
+    margin-right: 20px;
 }
 
 .menu-toggle {
@@ -30,6 +64,7 @@ nav.navbar {
     color: #FECE61;
     display: none;
     cursor: pointer;
+    padding: 20px;
 }
 
 .nav {
@@ -46,32 +81,137 @@ nav.navbar {
     font-size: 1.1em;
     font-weight: bold;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 .nav li a:hover {
     color: #FECE61;
 }
 
+.nav li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #FECE61;
+    transition: width 0.3s ease;
+}
 
-
+.nav li a.active::after {
+    width: 100%;
+}
 
 
 
 .sobre {
-    padding: 40px 20px;
+    padding: 200px 20px;
     text-align: center;
-    background-color: #292c2e;
+    position: relative;
+    overflow: hidden;
+    background-image: url("Imagens/sobrebg.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.sobre::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 0;
+}
+
+.sobre::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, rgba(254, 206, 97, 0.15), transparent 70%);
+    animation: brilhoMove 18s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.sobre-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .sobre h2 {
     color: #FECE61;
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    position: relative;
+    text-shadow: 0 0 15px rgba(254, 206, 97, 0.3);
 }
 
+.sobre h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #FECE61;
+    margin: 15px auto 30px auto;
+    border-radius: 2px;
+}
 
+.sobre-intro {
+    position: relative;
+    color: #ddd;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
 
+.sobre-intro::before {
+    content: "“";
+    position: absolute;
+    left: -25px;
+    top: -20px;
+    font-size: 4rem;
+    color: #FECE61;
+    opacity: 0.3;
+}
 
+.sobre p {
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.sobre-destaque {
+    color: #FECE61;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.assinatura {
+    display: block;
+    margin-top: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.ler-mais {
+    background: none;
+    border: none;
+    color: #FECE61;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 1.05rem;
+}
+
+.texto-extra,
+.sobre-restante {
+    display: none;
+}
 
 .grupo {
     padding: 60px 20px;
@@ -79,9 +219,11 @@ nav.navbar {
     color: #FECE61;
     text-align: center;
 }
+
 .indicador-scroll {
     display: none;
 }
+
 .grupo h2 {
     font-size: 2.2rem;
     margin-bottom: 40px;
@@ -113,11 +255,10 @@ nav.navbar {
 .card-grupo img {
     width: 100%;
     height: 220px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
     margin-bottom: 15px;
-    transition: filter 0.1s ease;
-    object-fit: contain;
+    transition: filter 0.3s ease;
 }
 
 .card-grupo h3 {
@@ -129,6 +270,7 @@ nav.navbar {
     font-size: 0.9rem;
     color: #aaa;
 }
+
 .instagram-icon {
     position: absolute;
     bottom: -7px;
@@ -146,7 +288,8 @@ nav.navbar {
 }
 
 .instagram-icon img {
-    width: 70%; height: 70%;
+    width: 70%;
+    height: 70%;
     object-fit: contain;
 }
 
@@ -160,26 +303,60 @@ nav.navbar {
 
 .rsocial {
     text-align: center;
-    background-color: #1f1f1f;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background-image: url("Imagens/redesbg.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.rsocial::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.80);
+    z-index: 0;
+}
+
+.rsocial::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    right: -150px;
+    background: radial-gradient(circle, rgba(254, 206, 97, 0.15), transparent 70%);
+    animation: brilhoSocial 20s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.rsocial>* {
+    position: relative;
+    z-index: 1;
 }
 
 .rsocialtitulo {
     color: #FECE61;
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(254, 206, 97, 0.3);
 }
 
 .rsocialparagrafo {
     color: #fff;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
 }
 
 .rsocial-icon {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 60px 70px;
+    justify-content: center;
+    max-width: 420px;
+    margin: 0 auto;
 }
 
 .rsocial-icon a {
@@ -187,30 +364,68 @@ nav.navbar {
     align-items: center;
     justify-content: center;
 
-    width: 70px;
-    height: 70px;
+    width: 85px;
+    height: 85px;
 
     background: linear-gradient(45deg, #AD8347, #FECE61);
-    border-radius: 12px;
+    border-radius: 16px;
 
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 }
 
 .rsocial-icon img {
-    width: 35px;
-    height: 35px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
 }
 
 .rsocial-icon a:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 5px 15px #AD8347;
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(173, 131, 71, 0.6);
+}
+
+
+
+
+
+.agenda-container {
+    grid-template-columns: 1fr;
 }
 
 .agenda {
-    background: linear-gradient(180deg, #1f1f1f 0%, #181818 100%);
     padding: 5rem 1.5rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url("Imagens/agendabg.png");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.agenda::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    z-index: 0;
+}
+
+.agenda::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: -150px;
+    right: -150px;
+    background: radial-gradient(circle, rgba(254, 206, 97, 0.15), transparent 70%);
+    animation: brilhoAgenda 20s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.agenda>* {
+    position: relative;
+    z-index: 1;
 }
 
 .agendatitulo {
@@ -218,6 +433,7 @@ nav.navbar {
     font-size: 2.5rem;
     margin-bottom: 40px;
     letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(254, 206, 97, 0.3);
 }
 
 .agenda-container {
@@ -235,13 +451,42 @@ nav.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgba(254,206,97,0.08);
+    border: 1px solid rgba(254, 206, 97, 0.08);
     transition: 0.3s ease;
+}
+
+.evento-extra {
+    display: none;
+}
+
+.evento-extra.mostrar {
+    display: flex;
+}
+
+.agenda-botao-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-agenda {
+    background-color: #FECE61;
+    color: #000;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-agenda:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px #000;
 }
 
 .evento:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 20px rgba(254,206,97,0.2);
+    box-shadow: 0 0 20px rgba(254, 206, 97, 0.2);
 }
 
 .evento-data {
@@ -314,12 +559,6 @@ nav.navbar {
     height: 100%;
 }
 
-.spotify {
-    background-color: #292c2e;
-    padding: 40px 20px;
-    text-align: center;
-}
-
 .spotify h2 {
     color: #FECE61;
     margin-bottom: 20px;
@@ -331,30 +570,37 @@ nav.navbar {
     margin: 0 auto;
 }
 
+
 .contato {
     background-color: #1f1f1f;
     padding: 6rem 2rem;
+    text-align: center;
 }
 
+
 .contato-titulo {
-    text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     color: #FECE61;
 }
 
 .formulario-contato {
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto 3rem auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.05);
     padding: 2rem;
     border-radius: 16px;
     border: 1px solid var(--vidro);
+    box-sizing: border-box;
 }
 
 .grupo-form {
     margin-bottom: 1.5rem;
+
 }
 
 .campo-form {
@@ -365,6 +611,8 @@ nav.navbar {
     color: var(--claro);
     border: 1px solid var(--vidro);
     outline: none;
+    box-sizing: border-box;
+    display: block;
 }
 
 .campo-form:focus {
@@ -389,13 +637,81 @@ nav.navbar {
     box-shadow: 0 5px 15px #AD8347;
 }
 
-footer {
-    background-color: #292c2e;
+.footer {
+    background: linear-gradient(180deg, #1c1c1c 0%, #111 100%);
+    padding: 50px 20px 30px 20px;
     text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #aaa;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(254, 206, 97, 0.2);
 }
+
+.footer::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(254, 206, 97, 0.12), transparent 70%);
+    animation: brilhoFooter 18s ease-in-out infinite alternate;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-logo img {
+    width: 150px;
+    opacity: 0.9;
+}
+
+.footer-copy {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-dev {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footer-dev a {
+    color: #FECE61;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.footer-dev a:hover {
+    text-shadow: 0 0 10px rgba(254, 206, 97, 0.6);
+}
+
+.rs-icon-footer {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.rs-icon-footer a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.rs-icon-footer a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(71%) saturate(417%) hue-rotate(1deg) brightness(100%) contrast(101%);
+}
+
 
 .voltar-topo {
     text-align: center;
@@ -421,8 +737,26 @@ footer {
 
 
 
+textarea {
+    max-width: 100%;
+}
 
 @media (max-width: 768px) {
+
+    .sobre,
+    .agenda,
+    .rsocial {
+        background-attachment: scroll;
+    }
+
+    .formulario-contato {
+        padding: 1.5rem;
+    }
+
+    textarea.campo-form {
+        width: 100%;
+    }
+
     .nav {
         position: fixed;
         top: 0;
@@ -444,6 +778,8 @@ footer {
     .menu-toggle {
         display: block;
         z-index: 1000;
+        margin-left: auto;
+        margin-right: 15px;
     }
 
     .nav li {
@@ -483,6 +819,36 @@ footer {
     .container-grupo::-webkit-scrollbar {
         display: none;
     }
+
+    .agenda-container {
+        grid-template-columns: 1fr;
+    }
+
+    .evento {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .evento-data {
+        min-width: auto;
+    }
+
+    .evento-info {
+        margin-left: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .evento-extra.mostrar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    textarea.campo-form {
+        width: 100%;
+    }
+
     .indicador-scroll {
         display: block;
         font-size: 2rem;
@@ -490,13 +856,61 @@ footer {
         margin-bottom: 15px;
         animation: moverSeta 1.5s infinite;
     }
-    .agenda-container {
-    grid-template-columns: 1fr;
 }
-    @keyframes moverSeta {
-        0% { transform: translateX(0); opacity: 0.6; }
-        50% { transform: translateX(8px); opacity: 1; }
-        100% { transform: translateX(0); opacity: 0.6; }
+
+@keyframes brilhoFooter {
+    from {
+        transform: translateX(-50%) translateY(0px);
     }
 
+    to {
+        transform: translateX(-50%) translateY(-40px);
+    }
+}
+
+@keyframes brilhoMove {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(150px, 80px);
+    }
+}
+
+@keyframes moverSeta {
+    0% {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateX(8px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+}
+
+@keyframes brilhoAgenda {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(-120px, 80px);
+    }
+}
+
+@keyframes brilhoSocial {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(-120px, -60px);
+    }
 }
